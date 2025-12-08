@@ -355,7 +355,7 @@ func TestTailerCorruptedPositions(t *testing.T) {
 	}()
 
 	require.EventuallyWithT(t, func(c *assert.CollectT) {
-		assert.True(c, tailer.IsRunning())
+		assert.True(c, tailer.running.Load())
 		assert.Equal(c, "16", positionsFile.GetString(logFile.Name(), labels.String()))
 	}, time.Second, 50*time.Millisecond)
 
