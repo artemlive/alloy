@@ -52,6 +52,10 @@ Main (unreleased)
 
 - Fix the `prometheus.operator.*` components internal scrape manager now having a way to enable ingesting native histograms. (@dehaansa)
 
+- Fix issue in `loki.source.docker` where scheduling containers to tail could take too long. (@kalleep)
+
+- Fix potential deadlock in `loki.source.docker` when component is shutting down. (@kalleep)
+
 v1.12.0
 -----------------
 
